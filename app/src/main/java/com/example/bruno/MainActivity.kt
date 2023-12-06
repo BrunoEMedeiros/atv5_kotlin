@@ -49,9 +49,24 @@ class MainActivity : AppCompatActivity() {
         if(numero % 2 == 0){
             score++
             txtScore.text = score.toString()
-            Log.d("score", "par")
+            //Log.d("score", "par")
             txtRes.text = Random.nextInt(0,100).toString()
             btnNewGame.visibility = View.VISIBLE
+        }
+        else{
+            score--
+            if(score < 0){
+                txtScore.text = "Game over"
+                //Log.d("score", "par")
+                txtRes.text = "Game over"
+                btnNewGame.visibility = View.VISIBLE
+            }
+            else{
+                txtScore.text = score.toString()
+                //Log.d("score", "impar")
+                txtRes.text = Random.nextInt(0,100).toString()
+                btnNewGame.visibility = View.VISIBLE
+            }
         }
     }
 
@@ -63,5 +78,20 @@ class MainActivity : AppCompatActivity() {
             txtRes.text = Random.nextInt(0,100).toString()
             btnNewGame.visibility = View.VISIBLE
         }
+        else{
+            score--
+            if(score < 0){
+                txtScore.text = "Game over"
+                //Log.d("score", "par")
+                txtRes.text = "Game over"
+                btnNewGame.visibility = View.VISIBLE
+            }else{
+                txtScore.text = score.toString()
+                //Log.d("score", "impar")
+                txtRes.text = Random.nextInt(0,100).toString()
+                btnNewGame.visibility = View.VISIBLE
+            }
+        }
+
     }
 }
